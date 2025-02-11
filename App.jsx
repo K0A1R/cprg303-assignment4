@@ -8,47 +8,35 @@ import React from 'react';
 import {
   SafeAreaView,
   StyleSheet,
-  Pressable,
+  StatusBar,
   View,
-  Text,
-  ScrollView,
-  TextInput,
-  Button
+  Platform,
 } from 'react-native';
 
+import ToDoForm from './ToDoForm';
+import ToDoList from './ToDoList';
 
 function App() {
   return (
-    <SafeAreaView>
-      <ScrollView>
-        <Pressable>
-          <View style={[styles.task, styles.completed]}>
-            <Text style={styles.taskText}>Do laundry</Text>
-          </View>
-        </Pressable>
-        <Pressable>
-          <View style={[styles.task]}>
-            <Text style={styles.taskText}>Go to gym</Text>
-          </View>
-        </Pressable>
-        <Pressable>
-          <View style={[styles.task, styles.completed]}>
-            <Text style={styles.taskText}>Walk dog</Text>
-          </View>
-        </Pressable>
-      </ScrollView>
-      <View style={styles.form}>
-        <TextInput
-          style={styles.input}
-          placeholder="Add a new task..."
-        />
-        <Button title="Add" />
-      </View>
-    </SafeAreaView>
+    <View style={styles.container}>
+      <SafeAreaView style={styles.safeArea}>
+        <StatusBar barStyle="dark-content" backgroundColor="#fff" />
+        <ToDoForm />
+        <ToDoList />
+      </SafeAreaView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
+  },
+  safeArea: {
+    flex: 1,
+  },
   task: {
     padding: 10,
     borderBottomWidth: 1,
