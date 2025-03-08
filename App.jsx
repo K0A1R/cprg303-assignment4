@@ -13,10 +13,13 @@ import {
   Platform,
 } from "react-native";
 
+import { useState } from "react"; // Import useState from react
+
 import ToDoForm from "./ToDoForm";
 import ToDoList from "./ToDoList";
 
 function App() {
+  const [tasks, setTasks] = useState(["Do laundry", "Go to gym", "Walk dog"]); // Create state variable and initialize to the list of tasks
   return (
     <View style={styles.container}>
       <SafeAreaView style={styles.safeArea}>
