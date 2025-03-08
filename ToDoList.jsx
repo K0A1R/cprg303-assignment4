@@ -1,5 +1,12 @@
-import React from 'react';
-import { SafeAreaView, ScrollView, Pressable, View, Text } from 'react-native';
+import React from "react";
+import {
+  SafeAreaView,
+  ScrollView,
+  Pressable,
+  View,
+  Text,
+  StyleSheet,
+} from "react-native";
 
 function ToDoList() {
   return (
@@ -22,7 +29,6 @@ function ToDoList() {
         </Pressable>
       </ScrollView>
     </SafeAreaView>
-    
   );
 }
 
@@ -30,10 +36,10 @@ const styles = StyleSheet.create({
   task: {
     padding: 10,
     borderBottomWidth: 1,
-    borderColor: '#ccc',
+    borderColor: "#ccc",
   },
   completed: {
-    backgroundColor: '#e0e0e0',
+    backgroundColor: "#e0e0e0",
   },
   taskText: {
     fontSize: 16,
