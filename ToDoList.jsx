@@ -8,10 +8,17 @@ import {
   StyleSheet,
 } from "react-native";
 
-function ToDoList() {
+function ToDoList({ tasks }) {
   return (
     <SafeAreaView>
       <ScrollView>
+        {tasks.map((task, index) => (
+          <Pressable key={index}>
+            <View style={[styles.task, task.completed && styles.completed]}>
+              <Text style={styles.taskText}>{task.name}</Text>
+            </View>
+          </Pressable>
+        ))} {/* Fixed missing closing parenthesis for map() */}
         <Pressable>
           <View style={[styles.task, styles.completed]}>
             <Text style={styles.taskText}>Do laundry</Text>
@@ -31,6 +38,7 @@ function ToDoList() {
     </SafeAreaView>
   );
 }
+
 
 const styles = StyleSheet.create({
   task: {
