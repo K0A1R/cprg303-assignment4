@@ -25,6 +25,7 @@ function App() {
       <SafeAreaView style={styles.safeArea}>
         <StatusBar barStyle="dark-content" backgroundColor="#fff" />
         <ToDoForm />
+
         <ToDoList tasks={tasks}/>
       </SafeAreaView>
     </View>
