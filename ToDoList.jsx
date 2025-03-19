@@ -21,6 +21,7 @@ function ToDoList({ tasks }) {
           ))}
         </ScrollView>
       </SafeAreaView>
+  )
 }
 
 
