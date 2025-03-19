@@ -8,7 +8,7 @@ import {
   StyleSheet,
 } from "react-native";
 
-function ToDoList() {
+function ToDoList({ tasks }) {
   return (
       <SafeAreaView>
         <ScrollView>
@@ -21,8 +21,8 @@ function ToDoList() {
           ))}
         </ScrollView>
       </SafeAreaView>
-  );
 }
+
 
 const styles = StyleSheet.create({
   task: {
