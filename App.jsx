@@ -13,20 +13,26 @@ import {
   Platform,
 } from "react-native";
 
-import { useState } from "react"; // Import useState from react
+import { useState } from "react";
 
 import ToDoForm from "./ToDoForm";
 import ToDoList from "./ToDoList";
 
 function App() {
-  const [tasks, setTasks] = useState(["Do laundry", "Go to gym", "Walk dog"]); // Create state variable and initialize to the list of tasks
+  const [tasks, setTasks] = useState(["Do laundry", "Go to gym", "Walk dog"]);
+
+  // create a function named addTask that will handle adding new tasks to the list:
+  const addTask = (task) => {
+    // Implement the logic to add a new task
+  };
+
   return (
     <View style={styles.container}>
       <SafeAreaView style={styles.safeArea}>
         <StatusBar barStyle="dark-content" backgroundColor="#fff" />
-        <ToDoForm />
-
-        <ToDoList tasks={tasks}/>
+        {/* Pass the addTask function as a prop to the ToDoForm component */}
+        <ToDoForm addTask={addTask} />
+        <ToDoList tasks={tasks} />
       </SafeAreaView>
     </View>
   );
