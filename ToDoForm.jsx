@@ -7,7 +7,8 @@ import {
   StyleSheet,
 } from "react-native";
 
-function ToDoForm() {
+// Destructure the addTask function passed from the App component:
+function ToDoForm({ addTask }) {
   return (
     <SafeAreaView>
       <View style={styles.form}>
