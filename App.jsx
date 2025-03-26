@@ -22,7 +22,8 @@ function App() {
   const [tasks, setTasks] = useState(["Do laundry", "Go to gym", "Walk dog"]);
 
   // create a function named addTask that will handle adding new tasks to the list:
-  const addTask = (task) => {
+  const addTask = (taskText) => {
+    setTasks([...tasks, taskText]);
     // Implement the logic to add a new task
   };
 
