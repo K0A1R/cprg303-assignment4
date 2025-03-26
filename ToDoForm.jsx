@@ -9,11 +9,17 @@ import {
 
 // Destructure the addTask function passed from the App component:
 function ToDoForm({ addTask }) {
+  const [taskText, setTaskText] = React.useState('');
+
   return (
     <SafeAreaView>
       <View style={styles.form}>
-        <TextInput style={styles.input} placeholder="Add a new task..." />
-        <Button title="Add" />
+        <TextInput style={styles.input}
+          placeholder="Add a new task..."
+          onChangeText={(text) => setTaskText(text)}
+          value={ taskText }
+        />
+        <Button title="Add Task" onPress={() => addTask(taskText)}/>
       </View>
     </SafeAreaView>
   );
