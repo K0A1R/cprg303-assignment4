@@ -9,17 +9,25 @@ import {
 
 // Destructure the addTask function passed from the App component:
 function ToDoForm({ addTask }) {
-  const [taskText, setTaskText] = React.useState('');
+  const [taskText, setTaskText] = React.useState("");
 
   return (
     <SafeAreaView>
       <View style={styles.form}>
-        <TextInput style={styles.input}
+        <TextInput
+          style={styles.input}
           placeholder="Add a new task..."
           onChangeText={(text) => setTaskText(text)}
-          value={ taskText }
+          value={taskText}
         />
-        <Button title="Add Task" onPress={() => addTask(taskText)}/>
+        {/* Clear the input field after adding the task */}
+        <Button
+          title="Add Task"
+          onPress={() => {
+            addTask(taskText);
+            setTaskText(""); // Clear the input field
+          }}
+        />
       </View>
     </SafeAreaView>
   );
@@ -44,3 +52,4 @@ const styles = StyleSheet.create({
 });
 
 export default ToDoForm;
+

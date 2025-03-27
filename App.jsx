@@ -21,10 +21,13 @@ import ToDoList from "./ToDoList";
 function App() {
   const [tasks, setTasks] = useState(["Do laundry", "Go to gym", "Walk dog"]);
 
-  // create a function named addTask that will handle adding new tasks to the list:
+  // Updated addTask function to prevent duplicates
   const addTask = (taskText) => {
-    setTasks([...tasks, taskText]);
-    // Implement the logic to add a new task
+    if (!tasks.includes(taskText)) {
+      setTasks([...tasks, taskText]);
+    } else {
+      alert('Task already exists!');
+    }
   };
 
   return (
